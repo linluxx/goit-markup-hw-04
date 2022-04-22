@@ -9,6 +9,11 @@
   --unactive-btn-text: #212121;
   --background: #2f303a;
   --second-bg: #f5f4fa;
+  --social-btn-bg-frst: #ffffff;
+  --social-btn-fill-frst: #afb1b8;
+  --clients-icon: #afb1b8;
+  --social-btn-bg-scnd: rgba(255, 255, 255, 0.1);
+  --social-btn-fill-scnd: #ffffff;
 }
 
 body {
@@ -76,6 +81,25 @@ img {
   margin: -1px;
 }
 
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border-color: transparent;
+  padding: 0;
+}
 /* ---------------------HEADER--------------------- */
 
 .header {
@@ -90,8 +114,8 @@ img {
   letter-spacing: 0.03em;
   color: var(--accent);
   margin-right: 92px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .header-logo {
   color: #000;
@@ -125,9 +149,12 @@ img {
 .header-contact-link:hover,
 .header-contact-link:focus {
   color: var(--accent);
+  fill: currentColor;
 }
 
 .header-contact-link {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -146,15 +173,24 @@ img {
   margin-right: 50px;
 }
 
+.icon-nav {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
 /* ---------------------HERO--------------------- */
 
-.hero {
-  background-color: var(--background);
-}
 .hero .container {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  background-color: var(--background);
+  width: 1600px;
+  height: 600px;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-title {
@@ -187,9 +223,7 @@ img {
 }
 
 /* ---------------------FEATURES--------------------- */
-.features .container {
-  display: flex;
-}
+
 .features-title {
   font-weight: 700;
   font-size: 14px;
@@ -210,6 +244,11 @@ img {
   display: flex;
 }
 
+.features-icon-list {
+  display: flex;
+  margin-bottom: 30px;
+}
+
 .features-item {
   width: 270px;
 }
@@ -218,18 +257,22 @@ img {
   margin-right: 30px;
 }
 
+.features-icon-container {
+  background-color: var(--second-bg);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  display: flex;
+  width: 270px;
+  height: 120px;
+}
+
+.icon-features {
+  padding: 25px 100px;
+}
+
 /* ---------------------ABOUT--------------------- */
 .about {
   padding-top: 0;
-}
-
-.about-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-  margin-bottom: 50px;
 }
 
 .about-list {
@@ -249,14 +292,6 @@ img {
 .team {
   background-color: var(--second-bg);
 }
-.team-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-  margin-bottom: 50px;
-}
 
 .team-top-text {
   font-weight: 500;
@@ -273,6 +308,7 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-text);
+  margin-bottom: 16px;
 }
 
 .team-list {
@@ -296,6 +332,66 @@ img {
   width: 270px;
 }
 
+.team-social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.team-social-button {
+  background-color: var(--social-btn-bg-frst);
+  fill: var(--social-btn-fill-frst);
+}
+
+.team-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.icon-team-social {
+  width: 20px;
+  height: 20px;
+}
+
+.team-social-button:hover,
+.team-social-button:focus {
+  background-color: var(--active-btn-color);
+  fill: var(--active-btn-text);
+}
+
+/* ---------------------CLIENTS--------------------- */
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+}
+
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-item {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--clients-icon);
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  fill: var(--clients-icon);
+}
+
+.icon-clients {
+  width: 106px;
+  height: 60px;
+}
+
+.clients-item:hover,
+.clients-item:focus {
+  border-color: var(--accent);
+  fill: var(--accent);
+}
+
 /* ---------------------FOOTER--------------------- */
 
 .footer {
@@ -308,9 +404,18 @@ img {
   color: var(--white-title);
 }
 
+.footer .container {
+  display: flex;
+}
+.footer-contact-container {
+  margin-right: 70px;
+}
+
 .footer-logo {
   display: flex;
   margin-bottom: 20px;
+  padding: 0;
+  margin-right: 0;
 }
 
 .footer-adress-link {
@@ -345,6 +450,43 @@ img {
   margin-bottom: 9px;
 }
 
+.join {
+  display: block;
+  margin-top: 12px;
+}
+.join-social-list {
+  display: flex;
+}
+
+.join-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1, 14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-title);
+  margin-bottom: 20px;
+}
+
+.icon-join-social {
+  width: 20px;
+  height: 20px;
+}
+
+.join-social-button {
+  background-color: var(--social-btn-bg-scnd);
+  fill: var(--social-btn-fill-scnd);
+}
+
+.join-social-button:hover,
+.join-social-button:focus {
+  background-color: var(--active-btn-color);
+}
+
+.join-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 /* ---------------------PORTFOLIO-------------------- */
 
 .portfolio-btn {
@@ -364,6 +506,18 @@ img {
 .portfolio-btn:focus {
   color: var(--active-btn-text);
   background-color: var(--active-btn-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-btn-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-btn-item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .portfolio-top-text {
@@ -381,16 +535,6 @@ img {
   color: var(--main-text);
 }
 
-.portfolio-btn-list {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-
-.portfolio-btn-item:not(:last-child) {
-  margin-right: 8px;
-}
-
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -400,6 +544,13 @@ img {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-item:nth-child(3n) {
